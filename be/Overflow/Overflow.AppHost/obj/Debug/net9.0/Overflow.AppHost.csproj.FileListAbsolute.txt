@@ -121,7 +121,6 @@
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Overflow.AppHost.AssemblyInfoInputs.cache
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Overflow.AppHost.AssemblyInfo.cs
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Overflow.AppHost.csproj.CoreCompileInputs.cache
-/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Aspire/references/.ProjectMetadata.g.cs
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Aspire/references/_AppHost.ProjectMetadata.g.cs
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Overflow.2A6891A2.Up2Date
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Overflow.AppHost.dll
@@ -130,3 +129,6 @@
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Overflow.AppHost.genruntimeconfig.cache
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/ref/Overflow.AppHost.dll
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/bin/Debug/net9.0/Aspire.Hosting.Keycloak.dll
+/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Aspire/references/QuestionService.ProjectMetadata.g.cs
+/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Overflow.AppHost.sourcelink.json
+/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/Debug/net9.0/Aspire/references/Overflow_ServiceDefaults.ProjectMetadata.g.cs

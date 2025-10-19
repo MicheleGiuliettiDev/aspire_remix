@@ -15,4 +15,9 @@
     <PackageReference Include="Aspire.Hosting.Keycloak" Version="9.5.1-preview.1.25502.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Services\QuestionService\QuestionService.csproj" />
+    <ProjectReference Include="..\Overflow.ServiceDefaults\Overflow.ServiceDefaults.csproj" />
+  </ItemGroup>
+
 </Project>

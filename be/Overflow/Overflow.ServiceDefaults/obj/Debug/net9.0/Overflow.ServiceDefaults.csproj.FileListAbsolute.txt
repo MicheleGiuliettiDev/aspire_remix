@@ -10,3 +10,4 @@
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.ServiceDefaults/obj/Debug/net9.0/refint/Overflow.ServiceDefaults.dll
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.ServiceDefaults/obj/Debug/net9.0/Overflow.ServiceDefaults.pdb
 /home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.ServiceDefaults/obj/Debug/net9.0/ref/Overflow.ServiceDefaults.dll
+/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.ServiceDefaults/obj/Debug/net9.0/Overflow.ServiceDefaults.sourcelink.json

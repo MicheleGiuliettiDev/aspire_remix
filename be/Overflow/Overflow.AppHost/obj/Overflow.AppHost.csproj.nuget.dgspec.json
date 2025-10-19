@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/Overflow.AppHost.csproj": {}
+  },
+  "projects": {
+    "/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/Overflow.AppHost.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/Overflow.AppHost.csproj",
+        "projectName": "Overflow.AppHost",
+        "projectPath": "/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/Overflow.AppHost.csproj",
+        "packagesPath": "/home/michele/.nuget/packages/",
+        "outputPath": "/home/michele/Projects/dotnet_aspire_remix/be/Overflow/Overflow.AppHost/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/michele/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/usr/lib64/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Aspire.Dashboard.Sdk.linux-x64": {
+              "target": "Package",
+              "version": "[9.5.1, )",
+              "autoReferenced": true
+            },
+            "Aspire.Hosting.AppHost": {
+              "target": "Package",
+              "version": "[9.5.1, )"
+            },
+            "Aspire.Hosting.Keycloak": {
+              "target": "Package",
+              "version": "[9.5.1-preview.1.25502.11, )"
+            },
+            "Aspire.Hosting.Orchestration.linux-x64": {
+              "target": "Package",
+              "version": "[9.5.1, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

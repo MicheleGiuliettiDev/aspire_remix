@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Services\QuestionService\QuestionService.csproj" />
-    <ProjectReference Include="..\Overflow.ServiceDefaults\Overflow.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Overflow.ServiceDefaults\Overflow.ServiceDefaults.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 
 </Project>

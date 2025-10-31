@@ -65,6 +65,20 @@
               "target": "Package",
               "version": "[9.5.1, )",
               "autoReferenced": true
+            },
+            "Aspire.Hosting.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.5.2, )"
+            },
+            "Aspire.Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.5.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.10, )"
             }
           },
           "imports": [

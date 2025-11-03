@@ -77,5 +77,66 @@ namespace QuestionService.Controllers
 
             return question;
         }
+
+        [Authorize]
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Question>> UpdateQuestion(string id, CreateQuestionDto dto)
+        {
+            var question = await db.Questions.FindAsync(id);
+
+            if (question is null)
+            {
+                return NotFound();
+            }
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userId is null || question.AskerId != userId)
+            {
+                return Forbid("You are not allowed to update this question.");
+            }
+
+            var validTags = await db.Tags.Where(t => dto.TagSlugs.Contains(t.Slug)).ToListAsync();
+
+            var missing = dto.TagSlugs.Except(validTags.Select(t => t.Slug).ToList()).ToList();
+
+            if (missing.Count > 0)
+            {
+                return BadRequest($"The following tags do not exist: {string.Join(", ", missing)}");
+            }
+
+            question.Title = dto.Title;
+            question.Content = dto.Content;
+            question.TagSlugs = dto.TagSlugs;
+            question.UpdatedAt = DateTime.UtcNow;
+
+            await db.SaveChangesAsync();
+
+            return question;
+        }
+
+        [Authorize]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteQuestion(string id)
+        {
+            var question = await db.Questions.FindAsync(id);
+
+            if (question is null)
+            {
+                return NotFound();
+            }
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (userId is null || question.AskerId != userId)
+            {
+                return Forbid("You are not allowed to delete this question.");
+            }
+
+            db.Questions.Remove(question);
+            await db.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

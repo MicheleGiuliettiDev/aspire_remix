@@ -3,6 +3,7 @@ namespace QuestionService.Controllers
     using System.Security.Claims;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using Overflow.Services.QuestionsService.Data;
     using Overflow.Services.QuestionsService.Models;
     using QuestionService.DTOs;
@@ -15,6 +16,15 @@ namespace QuestionService.Controllers
         [HttpPost]
         public async Task<ActionResult<Question>> CreateQuestion(CreateQuestionDto dto)
         {
+            var validTags = await db.Tags.Where(t => dto.TagSlugs.Contains(t.Slug)).ToListAsync();
+
+            var missing = dto.TagSlugs.Except(validTags.Select(t => t.Slug).ToList()).ToList();
+
+            if (missing.Count > 0)
+            {
+                return BadRequest($"The following tags do not exist: {string.Join(", ", missing)}");
+            }
+
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var name = User.FindFirstValue("name");
 
@@ -35,6 +45,37 @@ namespace QuestionService.Controllers
             await db.SaveChangesAsync();
 
             return CreatedAtAction($"/questions/{question.Id}", question);
+        }
+
+        public async Task<ActionResult<List<Question>>> GetQuestions(string? tag)
+        {
+            var query = db.Questions.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(tag))
+            {
+                query = query.Where(q => q.TagSlugs.Contains(tag));
+            }
+
+            return await query.OrderByDescending(x => x.CreatedAt).ToListAsync();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Question>> GetQuestionById(string id)
+        {
+            var question = await db.Questions.FindAsync(id);
+
+            if (question is null)
+            {
+                return NotFound();
+            }
+
+            await db
+                .Questions.Where(q => q.Id == id)
+                .ExecuteUpdateAsync(setters =>
+                    setters.SetProperty(q => q.ViewCount, q => q.ViewCount + 1)
+                );
+
+            return question;
         }
     }
 }
